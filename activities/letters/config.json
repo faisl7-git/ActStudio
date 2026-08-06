@@ -1,0 +1,9 @@
+{
+  "id": "letters",
+  "name": "تحدي الحروف",
+  "version": "1.0.0",
+  "theme": "activities-teacher",
+  "questionsBasePath": "../../questions",
+  "assetsBasePath": "../../assets",
+  "teacherMode": true
+}

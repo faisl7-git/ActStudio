@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>تحدي الحروف | أنشطة</title>
+
+<!-- الطبقة المشتركة -->
+<link rel="stylesheet" href="../../shared/css/base.css">
+<link rel="stylesheet" href="../../shared/css/theme.css">
+<link rel="stylesheet" href="../../shared/css/components.css">
+
+<!-- أنماط النشاط -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="confetti"></canvas>
+
+<header class="app-header">
+  <button id="soundBtn" class="icon-btn" type="button">🔊</button>
+  <div class="brand"><strong>أنشطة</strong><span>حوّل الدرس إلى تجربة</span></div>
+  <button id="homeBtn" class="icon-btn" type="button">الرئيسية</button>
+</header>
+
+<!-- ======= الويزارد ======= -->
+<section id="wizard" class="screen active">
+  <div class="blobs" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <span class="blob b4"></span><span class="blob b5"></span><span class="blob b6"></span>
+  </div>
+  <div class="wizard-wrap">
+    <div id="steps" class="steps"></div>
+    <div class="panel">
+      <div id="wc"></div>
+      <div id="err" class="error"></div>
+      <div id="nav" class="nav"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= اللعب ======= -->
+<section id="game" class="screen">
+  <div class="game-layout">
+    <aside class="side">
+      <div class="side-title">الفرق والنقاط</div>
+      <div id="teacher" class="teacher-name"></div>
+      <div id="teams"></div>
+    </aside>
+
+    <main class="main">
+      <div id="turn" class="turn-bar"></div>
+
+      <div id="boardBox" class="board-card">
+        <div class="board-head">
+          <h2>اختر حرفًا</h2>
+          <span id="progress"></span>
+        </div>
+        <div id="board" class="letters"></div>
+      </div>
+
+      <div id="questionBox" class="question-card">
+        <div class="q-top">
+          <div>
+            <div id="cat" class="q-category"></div>
+            <div class="q-hint">تبدأ الإجابة بالحرف المختار</div>
+          </div>
+          <div id="bigLetter" class="big-letter"></div>
+        </div>
+        <div id="questionImageWrap" class="question-image-wrap"><img id="questionImage" class="question-image" alt="صورة السؤال"></div>
+        <div id="q" class="q-text"></div>
+        <div id="timer" class="timer hidden">
+          <span>⏱️</span>
+          <div class="timer-track"><div id="fill" class="timer-fill"></div></div>
+          <b id="timeNum"></b>
+        </div>
+        <div id="answer" class="answer-box"></div>
+        <div class="q-actions has-change">
+          <button id="changeQuestion" class="action change-question hidden" type="button">تغيير السؤال</button>
+          <button id="reveal" class="action reveal" type="button">إظهار الإجابة</button>
+          <button id="correct" class="action correct hidden" type="button">إجابة صحيحة +1</button>
+          <button id="wrong" class="action wrong hidden" type="button">إجابة خاطئة 0</button>
+        </div>
+        <div id="msg" class="result-message"></div>
+        <button id="next" class="next hidden" type="button">الحرف التالي ←</button>
+      </div>
+    </main>
+
+    <aside class="teacher-tools">
+      <div class="side-title">أدوات المعلم</div>
+      <button id="pause" class="tool-btn" type="button">إيقاف المؤقت</button>
+      <button id="add" class="tool-btn" type="button">+10 ثوانٍ</button>
+      <button id="reset" class="tool-btn" type="button">إعادة المؤقت</button>
+      <div class="tool-label">تغيير الوقت لكل الأسئلة</div>
+      <select id="liveTime" class="live-time">
+        <option value="0">بدون مؤقت</option>
+        <option value="15">15 ثانية</option>
+        <option value="20">20 ثانية</option>
+        <option value="30">30 ثانية</option>
+        <option value="45">45 ثانية</option>
+        <option value="60">60 ثانية</option>
+      </select>
+      <div id="roundInfo" class="round-info"></div>
+      <button id="end" class="tool-btn end" type="button">إنهاء النشاط</button>
+    </aside>
+  </div>
+</section>
+
+<!-- ======= النتائج ======= -->
+<section id="results" class="screen">
+  <div class="blobs" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <span class="blob b4"></span><span class="blob b5"></span><span class="blob b6"></span>
+  </div>
+  <div class="results-card">
+    <div class="trophy">🏆</div>
+    <h1>تقرير النشاط</h1>
+    <div class="teacher-highlight"><span>إعداد وتقديم</span><b id="resultTeacher"></b></div>
+    <div id="finalMeta" class="final-meta"></div>
+    <div id="winner" class="winner"></div>
+    <div id="rows" class="results-list"></div>
+    <div style="margin:18px 0 10px;text-align:center;color:var(--muted);font-size:13px;"><strong style="display:block;color:var(--primary);margin-bottom:4px;">شكرًا لاستخدام أنشطة</strong>حوّل الدرس إلى تجربة</div>
+    <button id="newGame" class="btn btn-primary" type="button">جلسة جديدة</button>
+  </div>
+</section>
+
+<!-- منطق النشاط -->
+<script src="app.js"></script>
+</body>
+</html>
