@@ -1,9 +1,15 @@
 {
   "id": "letters",
   "name": "تحدي الحروف",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "theme": "activities-teacher",
-  "questionsBasePath": "../../questions",
+  "questionsPath": "../../questions",
+  "questionBanks": {
+    "primary_lower": "primary_1_3/letters.json",
+    "primary_upper": "primary_4_6/letters.json",
+    "middle": "middle/letters.json",
+    "secondary": "secondary/letters.json"
+  },
   "assetsBasePath": "../../assets",
   "teacherMode": true
 }
