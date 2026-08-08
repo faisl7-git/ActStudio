@@ -29,7 +29,7 @@ button{cursor:pointer;-webkit-appearance:none;appearance:none;border:0;
 .hidden{display:none !important}
 
 /* العناوين بخط Tajawal */
-.brand strong,.title,.q-text,.big-letter,.letter,.team-score,
+.title,.q-text,.big-letter,.letter,.team-score,
 .results-card h1,.winner,.board-head h2,.turn-bar,.choice b,.btn-start{font-family:var(--font-head)}
 
 /* ============ الأشكال الزخرفية — شاشات الإعداد والملخص والنتائج فقط ============ */
@@ -53,9 +53,8 @@ button{cursor:pointer;-webkit-appearance:none;appearance:none;border:0;
   display:flex;align-items:center;justify-content:space-between;padding:0 16px;
   position:sticky;top:0;z-index:30;padding-top:env(safe-area-inset-top,0);
   height:calc(60px + env(safe-area-inset-top,0))}
-.brand{text-align:center;line-height:1.25}
-.brand strong{display:block;color:var(--primary);font-size:18px;font-weight:900}
-.brand span{color:var(--muted);font-size:11px}
+.brand{display:flex;align-items:center;justify-content:center;line-height:0}
+.brand-logo{display:block;width:100px;max-height:52px;height:auto;object-fit:contain}
 .icon-btn{background:var(--card);border:1px solid var(--border);border-radius:10px;
   padding:9px 13px;color:var(--muted);font-weight:700;font-size:13px;min-height:40px}
 .icon-btn:hover{border-color:var(--primary);color:var(--primary)}
@@ -253,7 +252,7 @@ canvas#confetti{position:fixed;inset:0;pointer-events:none;z-index:100;display:n
   .reveal{grid-column:auto}
   .game-layout{padding:9px}
   .board-card,.question-card{padding:14px}
-  .brand strong{font-size:15px}
+  .brand-logo{width:92px;max-height:48px}
   .results-card{padding:24px 16px}
 }
 
